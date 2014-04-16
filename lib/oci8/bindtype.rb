@@ -118,7 +118,8 @@ class OCI8
                 if OCI8.respond_to? :encoding and OCI8.encoding != val.encoding
                   # If the string encoding is different with NLS_LANG character set,
                   # convert it to get the length.
-                  val = val.encode(OCI8.encoding)
+                  # val = val.encode(OCI8.encoding)
+                  # comment val encode because of a error while encode process running
                 end
                 if val.respond_to? :bytesize
                   # ruby 1.8.7 or upper
